@@ -14,11 +14,13 @@ function handleStartButtonClick(evt) {
     if (timerId) return;
     timerId = setInterval(changeBGColor, DELAY, bodyEl);
     startButton.setAttribute('disabled', 'disabled');
+    stopButton.removeAttribute('disabled');
 };
 
 function handleStopButtonClick(evt) {
     clearInterval(timerId);
     startButton.removeAttribute('disabled');
+    stopButton.setAttribute('disabled', 'disabled');
     timerId = null;
 };
 
